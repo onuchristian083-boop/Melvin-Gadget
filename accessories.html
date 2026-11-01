@@ -7,11 +7,22 @@
     <title>Phone Accessories | Melvin Gadgets</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body class="accessories-page">
+  <body class="accessories-page page-transition-pending" data-page-title="Phone Accessories">
     <header class="site-header">
-      <div class="detail-header-inner">
-        <a class="detail-brand" href="index.html">Melvin Gadgets</a>
-        <a class="detail-back" href="index.html#accessories">Back to home</a>
+      <div class="headerwrapper">
+        <a class="mylogo" href="index.html" aria-label="Melvin Gadgets home"><img src="mglogo.jpg" alt="Melvin Gadgets"></a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
+          <img class="menu-icon menu-icon-open" src="buggermenu.jpg" alt=""><img class="menu-icon menu-icon-close" src="cancel.jpg" alt="">
+        </button>
+        <nav class="list" id="primary-navigation" aria-label="Main navigation">
+          <ul class="mylist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="phones.html">Phones</a></li>
+            <li><a href="accessories.html" aria-current="page">Phone accessories</a></li>
+            <li><a href="customer-care.html">Customer care</a></li>
+            <li><a href="about.html">About us</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
@@ -111,17 +122,39 @@
 
         <p class="accessory-disclaimer">Mock prices are for demonstration only. Product compatibility, features, and availability may vary.</p>
       </section>
+      <section class="accessory-help">
+        <div class="page-width">
+          <div class="section-heading">
+            <div><p class="eyebrow">Choose the right accessory</p><h2>Check compatibility before you buy.</h2></div>
+            <p>The right connector or fit depends on your device. Confirm details with us if you are unsure.</p>
+          </div>
+          <div class="detail-info-grid">
+            <article><span>01</span><h3>Know your device model</h3><p>Have your phone or gadget model ready so you can check that a case, cable, or accessory is suitable.</p></article>
+            <article><span>02</span><h3>Ask about connectors and fit</h3><p>Check whether a charger or earphone uses the connector your device needs, and whether a case fits your exact model.</p></article>
+            <article><span>03</span><h3>Confirm price and stock</h3><p>Listed prices are examples only. Contact us for the current price and availability of an accessory.</p></article>
+          </div>
+          <div class="page-inline-cta"><p>Need help finding an accessory for your device?</p><a class="button button-dark" href="customer-care.html">Ask customer care</a></div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
       <div class="page-width">
         <a href="index.html">Melvin Gadgets</a>
         <p>Good tech, made simple.</p>
+        <nav class="footer-navigation" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="phones.html">Phones</a>
+          <a href="accessories.html" aria-current="page">Phone accessories</a>
+          <a href="customer-care.html">Customer care</a>
+          <a href="about.html">About us</a>
+        </nav>
         <nav class="footer-socials" aria-label="Social media">
           <a href="https://www.tiktok.com/@Melvingadgets" target="_blank" rel="noopener noreferrer">TikTok <span>@Melvingadgets</span></a>
           <a href="https://www.instagram.com/Melvingadgetstech" target="_blank" rel="noopener noreferrer">Instagram <span>@Melvingadgetstech</span></a>
         </nav>
       </div>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>

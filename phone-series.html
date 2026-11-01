@@ -7,11 +7,22 @@
     <title>Phone Series | Melvin Gadgets</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body class="series-detail-page">
+  <body class="series-detail-page page-transition-pending" data-page-title="iPhone Series">
     <header class="site-header">
-      <div class="detail-header-inner">
-        <a class="detail-brand" href="index.html">Melvin Gadgets</a>
-        <a class="detail-back" href="index.html#phones">Back to phones</a>
+      <div class="headerwrapper">
+        <a class="mylogo" href="index.html" aria-label="Melvin Gadgets home"><img src="mglogo.jpg" alt="Melvin Gadgets"></a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
+          <img class="menu-icon menu-icon-open" src="buggermenu.jpg" alt=""><img class="menu-icon menu-icon-close" src="cancel.jpg" alt="">
+        </button>
+        <nav class="list" id="primary-navigation" aria-label="Main navigation">
+          <ul class="mylist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="phones.html" aria-current="page">Phones</a></li>
+            <li><a href="accessories.html">Phone accessories</a></li>
+            <li><a href="customer-care.html">Customer care</a></li>
+            <li><a href="about.html">About us</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
@@ -35,12 +46,20 @@
       <div class="page-width">
         <a href="index.html">Melvin Gadgets</a>
         <p>Good tech, made simple.</p>
+        <nav class="footer-navigation" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="phones.html" aria-current="page">Phones</a>
+          <a href="accessories.html">Phone accessories</a>
+          <a href="customer-care.html">Customer care</a>
+          <a href="about.html">About us</a>
+        </nav>
         <nav class="footer-socials" aria-label="Social media">
           <a href="https://www.tiktok.com/@Melvingadgets" target="_blank" rel="noopener noreferrer">TikTok <span>@Melvingadgets</span></a>
           <a href="https://www.instagram.com/Melvingadgetstech" target="_blank" rel="noopener noreferrer">Instagram <span>@Melvingadgetstech</span></a>
         </nav>
       </div>
     </footer>
+    <script src="index.js"></script>
     <script src="phone-series.js"></script>
   </body>
 </html>
