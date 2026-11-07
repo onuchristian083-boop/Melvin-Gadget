@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ask the Melvin Gadgets product guide about iPhones, sample prices, and choosing a device.">
+    <title>Gadget AI Assistant | Melvin Gadgets</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="page-transition-pending" data-page-title="Gadget Guide">
+    <header class="site-header">
+      <div class="headerwrapper">
+        <a class="mylogo" href="index.html" aria-label="Melvin Gadgets home"><img src="mglogo.jpg" alt="Melvin Gadgets"></a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
+          <img class="menu-icon menu-icon-open" src="buggermenu.jpg" alt="">
+          <img class="menu-icon menu-icon-close" src="cancel.jpg" alt="">
+        </button>
+        <nav class="list" id="primary-navigation" aria-label="Main navigation">
+          <ul class="mylist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="phones.html">Phones</a></li>
+            <li><a href="accessories.html">Phone accessories</a></li>
+            <li><a href="customer-care.html">Customer care</a></li>
+            <li><a href="about.html">About us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="page-intro page-width">
+        <p class="eyebrow">Melvin Gadgets · product guide</p>
+        <h1>Let’s find the right gadget for you.</h1>
+        <p>Ask about sample iPhone prices or get a few tips for choosing your next phone.</p>
+      </section>
+      <section class="gadget-chat page-width" aria-label="Chat with the Melvin Gadgets product guide">
+        <div class="chat-heading">
+          <div>
+            <p class="eyebrow">A helpful place to start</p>
+            <h2>Ask our gadget guide</h2>
+          </div>
+          <span class="chat-preview-badge"><span aria-hidden="true"></span> AI assistant</span>
+        </div>
+        <div class="chat-panel">
+          <div class="chat-topbar">
+            <span class="chat-avatar" aria-hidden="true">M</span>
+            <div><strong>Melvin Gadgets Guide</strong><span>Product information assistant</span></div>
+          </div>
+          <div class="chat-messages" id="chat-box" role="log" aria-live="polite" aria-relevant="additions text">
+            <div class="chat-message chat-message-assistant">
+              <p>Hi! I can compare iPhone models and storage, share verified specifications, or help you choose a phone for your budget. What are you looking for?</p>
+            </div>
+          </div>
+          <div class="chat-suggestions" aria-label="Suggested questions">
+            <button type="button" data-chat-prompt="What is the price of iPhone 12?">iPhone prices</button>
+            <button type="button" data-chat-prompt="What are the verified camera and battery details for iPhone 17?">Phone specs</button>
+            <button type="button" data-chat-prompt="Help me choose a phone">Help me choose</button>
+            <button type="button" data-chat-prompt="How do I check availability?">Check availability</button>
+          </div>
+          <form class="chat-form" id="chat-form">
+            <label class="visually-hidden" for="message-input">Your message</label>
+            <input id="message-input" name="message" type="text" placeholder="Ask a question..." autocomplete="off" maxlength="500" required>
+            <button type="submit" id="send-btn">Send</button>
+          </form>
+        </div>
+        <p class="chat-disclaimer">Prices are samples for guidance only, not current offers or live stock information. Contact our team to confirm today’s prices, condition, and availability.</p>
+        <div class="page-inline-cta">
+          <p>Need a current stock or product check?</p>
+          <a class="button button-dark" href="https://wa.me/2349130141794" target="_blank" rel="noopener noreferrer">Ask us on WhatsApp</a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="page-width">
+        <a href="index.html">Melvin Gadgets</a>
+        <p>Good tech, made simple.</p>
+        <nav class="footer-navigation" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="phones.html">Phones</a>
+          <a href="accessories.html">Phone accessories</a>
+          <a href="customer-care.html">Customer care</a>
+          <a href="about.html">About us</a>
+        </nav>
+        <nav class="footer-socials" aria-label="Social media">
+          <a href="https://www.tiktok.com/@Melvingadgets" target="_blank" rel="noopener noreferrer">TikTok <span>@Melvingadgets</span></a>
+          <a href="https://www.instagram.com/Melvingadgetstech" target="_blank" rel="noopener noreferrer">Instagram <span>@Melvingadgetstech</span></a>
+        </nav>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+    <script src="chat.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>

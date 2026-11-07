@@ -109,58 +109,90 @@
       }
     }
 
-    const phoneCatalog = {
-      "phone-11": [
-        ["iPhone 11", "₦220,000"], ["iPhone 11 Pro", "₦270,000"], ["iPhone 11 Pro Max", "₦320,000"]
-      ],
-      "phone-x": [
-        ["iPhone XR", "₦160,000"], ["iPhone X", "₦180,000"], ["iPhone XS", "₦210,000"], ["iPhone XS Max", "₦250,000"]
-      ],
-      "phone-12": [
-        ["iPhone 12 mini", "₦300,000"], ["iPhone 12", "₦340,000"], ["iPhone 12 Pro", "₦380,000"], ["iPhone 12 Pro Max", "₦420,000"]
-      ],
-      "phone-13": [
-        ["iPhone 13 mini", "₦420,000"], ["iPhone 13", "₦460,000"], ["iPhone 13 Pro", "₦510,000"], ["iPhone 13 Pro Max", "₦560,000"]
-      ],
-      "phone-14": [
-        ["iPhone 14", "₦550,000"], ["iPhone 14 Plus", "₦600,000"], ["iPhone 14 Pro", "₦660,000"], ["iPhone 14 Pro Max", "₦720,000"]
-      ],
-      "phone-15": [
-        ["iPhone 15", "₦700,000"], ["iPhone 15 Plus", "₦760,000"], ["iPhone 15 Pro", "₦830,000"], ["iPhone 15 Pro Max", "₦900,000"]
-      ],
-      "phone-16": [
-        ["iPhone 16e", "₦900,000"], ["iPhone 16", "₦980,000"], ["iPhone 16 Pro", "₦1,070,000"], ["iPhone 16 Pro Max", "₦1,150,000"]
-      ],
-      "phone-17": [
-        ["iPhone 17", "₦1,150,000"], ["iPhone 17 Air", "₦1,250,000"], ["iPhone 17 Pro", "₦1,350,000"], ["iPhone 17 Pro Max", "₦1,450,000"]
-      ],
-      "phone-18": [
-        ["iPhone 18", "₦1,400,000"], ["iPhone 18 Plus", "₦1,520,000"], ["iPhone 18 Pro", "₦1,650,000"], ["iPhone 18 Pro Max", "₦1,800,000"]
-      ]
+    let phonePriceListPromise;
+    window.phonePriceList = {
+      load() {
+        if (!phonePriceListPromise) {
+          phonePriceListPromise = fetch("mock-database.json")
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(`Price list request failed with status ${response.status}`);
+              }
+              return response.json();
+            })
+            .then((priceList) => {
+              if (!priceList || !Array.isArray(priceList.data)) {
+                throw new Error("The mock phone database has an invalid format");
+              }
+
+              const conditionMultipliers = priceList.condition_multipliers;
+              const requiredConditions = ["NAIJA_USED", "UK_USED", "CHANGED_BATTERY", "CHANGED_SCREEN"];
+              const hasInvalidMultipliers = !conditionMultipliers ||
+                requiredConditions.some((condition) =>
+                  !Number.isFinite(conditionMultipliers[condition]) || conditionMultipliers[condition] <= 0
+                ) || conditionMultipliers.NAIJA_USED !== 1;
+
+              if (hasInvalidMultipliers) {
+                throw new Error("The mock phone database has invalid condition price multipliers");
+              }
+
+              const products = priceList.data.filter((product) => product && product.category === "APPLE_PHONE");
+              const hasInvalidProduct = products.some((product) =>
+                typeof product.model !== "string" ||
+                !Number.isFinite(product.lowest_price) ||
+                product.lowest_price < 0 ||
+                typeof product.condition !== "string" ||
+                !product.attributes ||
+                typeof product.attributes.storage !== "string"
+              );
+
+              if (hasInvalidProduct) {
+                throw new Error("The mock phone database contains an invalid Apple phone record");
+              }
+
+              return products.flatMap((product) =>
+                requiredConditions.map((condition) => ({
+                  ...product,
+                  condition,
+                  lowest_price: Math.round(product.lowest_price * conditionMultipliers[condition])
+                }))
+              );
+            });
+        }
+
+        return phonePriceListPromise;
+      },
+      seriesIdForModel(modelName) {
+        const match = modelName.match(/^iPhone\s+(XR|XS|X|1[1-8]|[0-9])(?=\b|[a-z])/i);
+        if (!match) return null;
+
+        const modelPrefix = match[1].toLowerCase();
+        return ["x", "xr", "xs"].includes(modelPrefix) ? "phone-x" : `phone-${modelPrefix}`;
+      },
+      formatPrice(price) {
+        return `₦${price.toLocaleString("en-NG")}`;
+      }
     };
 
     document.querySelectorAll(".product-card").forEach((card) => {
-      const models = phoneCatalog[card.id];
+      if (document.body.dataset.pageTitle === "Phones") {
+        card.addEventListener("click", (event) => {
+          if (event.target.closest("a, button, .product-price-overlay")) return;
+          window.location.href = `phone-series.html?series=${encodeURIComponent(card.id)}`;
+        });
+      }
+
       const priceOverlay = card.querySelector(".product-price-overlay");
 
-      if (!models || !priceOverlay) return;
+      if (!priceOverlay) return;
 
-      const heading = card.querySelector(".product-info h3").textContent;
-      const listId = `${card.id}-prices`;
-      priceOverlay.innerHTML = `
-        <button class="price-toggle" type="button" aria-expanded="false" aria-controls="${listId}">View models + prices</button>
-        <div class="price-panel" id="${listId}" aria-label="${heading} mock prices">
-          <p>Sample prices in NGN</p>
-          <ul>${models.map(([name, price]) => `<li><span>${name}</span><strong>${price}</strong></li>`).join("")}</ul>
-        </div>
-      `;
-
-      const toggle = priceOverlay.querySelector(".price-toggle");
-      toggle.addEventListener("click", () => {
-        const isExpanded = toggle.getAttribute("aria-expanded") === "true";
-        toggle.setAttribute("aria-expanded", String(!isExpanded));
-        card.classList.toggle("prices-open", !isExpanded);
-      });
+      const heading = card.querySelector(".product-info h3").textContent.trim();
+      const fullPriceListLink = document.createElement("a");
+      fullPriceListLink.className = "price-toggle";
+      fullPriceListLink.href = `phone-series.html?series=${encodeURIComponent(card.id)}`;
+      fullPriceListLink.textContent = "Open full price list";
+      fullPriceListLink.setAttribute("aria-label", `View all storage and condition prices for ${heading}`);
+      priceOverlay.replaceChildren(fullPriceListLink);
     });
 
     const menuToggle = document.querySelector(".menu-toggle");

@@ -1,0 +1,218 @@
+{
+  "verified_at": "2026-11-06",
+  "source_note": "Apple's display measurements use the standard rectangle; rounded corners make the actual viewable area smaller. Water-resistance ratings come from controlled laboratory tests, are not permanent, and can decline with wear.",
+  "models": {
+    "iPhone X": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "5.85-inch diagonal display measurement.",
+        "water_resistance": "IP67, tested up to 1 meter for up to 30 minutes."
+      },
+      "everyday_note": "A smaller screen may suit someone who prefers a more compact phone."
+    },
+    "iPhone XS": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "5.85-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 2 meters for up to 30 minutes."
+      },
+      "everyday_note": "A smaller screen may suit someone who prefers a more compact phone."
+    },
+    "iPhone XR": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.06-inch diagonal display measurement.",
+        "water_resistance": "IP67, tested up to 1 meter for up to 30 minutes."
+      },
+      "everyday_note": "The 6-inch-class screen gives more viewing room than the smaller X and XS models."
+    },
+    "iPhone 11": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.06-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 2 meters for up to 30 minutes."
+      },
+      "everyday_note": "The 6-inch-class screen gives a useful balance of viewing space and phone size."
+    },
+    "iPhone 11 Pro": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "5.85-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 4 meters for up to 30 minutes."
+      },
+      "everyday_note": "A smaller screen may suit someone who prefers a more compact phone."
+    },
+    "iPhone 11 Pro Max": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.46-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 4 meters for up to 30 minutes."
+      },
+      "everyday_note": "The larger screen offers more room for reading and video."
+    },
+    "iPhone 12": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.06-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The 6-inch-class screen gives a useful balance of viewing space and phone size."
+    },
+    "iPhone 12 Pro": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.06-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The 6-inch-class screen gives a useful balance of viewing space and phone size."
+    },
+    "iPhone 12 Pro Max": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.68-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The larger screen offers more room for reading and video."
+    },
+    "iPhone 13": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.06-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The 6-inch-class screen gives a useful balance of viewing space and phone size."
+    },
+    "iPhone 13 Pro": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.06-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The 6-inch-class screen gives a useful balance of viewing space and phone size."
+    },
+    "iPhone 13 Pro Max": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.68-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The larger screen offers more room for reading and video."
+    },
+    "iPhone 14": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.06-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The 6-inch-class screen gives a useful balance of viewing space and phone size."
+    },
+    "iPhone 14 Pro": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.12-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The screen is close to the familiar 6-inch size, with a little extra viewing area."
+    },
+    "iPhone 14 Pro Max": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.69-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The larger screen offers more room for reading and video."
+    },
+    "iPhone 15": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.12-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The screen is close to the familiar 6-inch size, with a little extra viewing area."
+    },
+    "iPhone 15 Pro": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.12-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The screen is close to the familiar 6-inch size, with a little extra viewing area."
+    },
+    "iPhone 15 Pro Max": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.69-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The larger screen offers more room for reading and video."
+    },
+    "iPhone 16": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone-16/specs/",
+      "facts": {
+        "display": "6.1-inch Super Retina XDR OLED; 6.12-inch diagonal when measured as a standard rectangle.",
+        "chip": "Apple A18 chip.",
+        "rear_camera": "48MP Fusion main camera and 12MP Ultra Wide; the main camera also supports 2x optical-quality zoom.",
+        "front_camera": "12MP TrueDepth camera.",
+        "battery": "Apple rates video playback up to 22 hours, or streamed video up to 18 hours.",
+        "connector": "USB-C.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The OLED screen is suited to video and photos; the Ultra Wide camera captures more of a scene, while the main camera offers a 2x optical-quality view. Apple’s battery figure is a lab rating, not a guarantee of daily runtime."
+    },
+    "iPhone 16 Pro": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.27-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The screen is in the larger 6-inch class, giving extra room for reading and video."
+    },
+    "iPhone 16 Pro Max": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone/compare/",
+      "facts": {
+        "display": "6.86-inch diagonal display measurement.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The largest screen in this list offers the most viewing room, though it may feel less compact in hand."
+    },
+    "iPhone 17": {
+      "verified": true,
+      "source_url": "https://www.apple.com/iphone-17/specs/",
+      "facts": {
+        "display": "6.3-inch Super Retina XDR OLED with adaptive ProMotion up to 120Hz; 6.27-inch diagonal when measured as a standard rectangle.",
+        "chip": "Apple A19 chip.",
+        "rear_camera": "48MP Dual Fusion system with a 48MP main camera and 48MP Ultra Wide; also supports 2x optical-quality telephoto framing.",
+        "front_camera": "18MP Center Stage camera.",
+        "battery": "Apple rates video playback up to 30 hours, or streamed video up to 27 hours.",
+        "connector": "USB-C.",
+        "water_resistance": "IP68, tested up to 6 meters for up to 30 minutes."
+      },
+      "everyday_note": "The 120Hz display can make scrolling feel smoother, and the 48MP Ultra Wide can capture more detail in wide scenes. Center Stage helps keep people framed during supported video calls. Apple’s battery figure is a lab rating, not a guarantee of daily runtime."
+    },
+    "iPhone 18": {
+      "verified": false,
+      "note": "No official Apple technical specifications page for the base iPhone 18 was available when this catalog was checked. Do not infer specifications from iPhone 18 Pro or earlier models."
+    }
+  }
+}

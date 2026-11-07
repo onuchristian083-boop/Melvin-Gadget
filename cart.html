@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Review your Melvin Gadgets order request and send it to the team for confirmation.">
+    <title>Order Request | Melvin Gadgets</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="page-transition-pending" data-page-title="Order Request">
+    <header class="site-header">
+      <div class="headerwrapper">
+        <a class="mylogo" href="index.html" aria-label="Melvin Gadgets home"><img src="mglogo.jpg" alt="Melvin Gadgets"></a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
+          <img class="menu-icon menu-icon-open" src="buggermenu.jpg" alt=""><img class="menu-icon menu-icon-close" src="cancel.jpg" alt="">
+        </button>
+        <nav class="list" id="primary-navigation" aria-label="Main navigation">
+          <ul class="mylist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="phones.html">Phones</a></li>
+            <li><a href="accessories.html">Phone accessories</a></li>
+            <li><a href="customer-care.html">Customer care</a></li>
+            <li><a href="about.html">About us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="cart-page page-width">
+        <div class="cart-page-heading">
+          <p class="eyebrow">Your selection</p>
+          <h1>Order request</h1>
+          <p>Review your items and send the request to our team. We’ll confirm availability, final prices, and delivery or pickup details.</p>
+        </div>
+
+        <div class="order-cart-layout">
+          <section class="cart-items-panel" aria-labelledby="cart-items-heading">
+            <div class="cart-panel-heading">
+              <h2 id="cart-items-heading">Items</h2>
+              <span id="cart-summary-count">0 items</span>
+            </div>
+            <p class="cart-empty" id="cart-empty">Your order request is empty. Add a phone option or accessory to get started.</p>
+            <div class="cart-items-list" id="cart-items"></div>
+            <a class="cart-continue-link" href="phones.html">Continue browsing phones</a>
+          </section>
+
+          <section class="cart-checkout-panel" aria-labelledby="request-details-heading">
+            <h2 id="request-details-heading">Your details</h2>
+            <p>We’ll use these details to follow up about your request.</p>
+            <form id="order-request-form" hidden>
+              <label for="customer-name">Name</label>
+              <input id="customer-name" name="customerName" type="text" autocomplete="name" maxlength="100" required>
+
+              <label for="customer-phone">Phone number</label>
+              <input id="customer-phone" name="customerPhone" type="tel" autocomplete="tel" maxlength="30" required>
+
+              <label for="order-note">Note <span>(optional)</span></label>
+              <textarea id="order-note" name="orderNote" rows="3" maxlength="400" placeholder="Preferred colour, questions, or delivery area"></textarea>
+
+              <button class="button button-dark order-submit" type="submit">Send order request</button>
+            </form>
+            <p class="cart-checkout-hint" id="cart-checkout-hint">Add an item to continue. No payment is taken on this page.</p>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-width">
+        <a href="index.html">Melvin Gadgets</a>
+        <p>Good tech, made simple.</p>
+        <nav class="footer-navigation" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="phones.html">Phones</a>
+          <a href="accessories.html">Phone accessories</a>
+          <a href="customer-care.html">Customer care</a>
+          <a href="about.html">About us</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>
