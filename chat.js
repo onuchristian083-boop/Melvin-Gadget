@@ -21,17 +21,26 @@ if (chatForm && chatMessages && messageInput && sendButton) {
       throw new Error("Open the chat through the local server at http://localhost:3000/chat.html.");
     }
 
-    const response = await fetch("/api/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        messages: [...conversation, { role: "user", content: question }].slice(-12)
-      })
-    });
+    let response;
+    try {
+      response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: [...conversation, { role: "user", content: question }].slice(-12)
+        })
+      });
+    } catch {
+      throw new Error("I can't reach the server right now. Check your connection and try again.");
+    }
+
+    // Read the body once as text, then parse it, so we can see what really came back.
+    const rawText = await response.text();
     let result;
     try {
-      result = await response.json();
+      result = JSON.parse(rawText);
     } catch {
+      console.error("Server sent:", rawText.slice(0, 300));
       throw new Error("The assistant returned an invalid response. Please try again.");
     }
 
