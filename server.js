@@ -65,6 +65,9 @@ const applyCors = (request, response) => {
 };
 
 const readJsonBody = async (request) => {
+  if (request.body && typeof request.body === "object" && !Buffer.isBuffer(request.body)) {
+    return request.body;
+  }
   const chunks = [];
   let byteLength = 0;
 
@@ -684,13 +687,17 @@ const server = http.createServer((request, response) => {
   });
 });
 
-server.listen(PORT, process.env.HOST || "0.0.0.0", () => {
-  console.log(`Melvin Gadgets is running on http://localhost:${PORT}`);
-  if (aiDisabled) {
-    console.warn("AI is disabled; chat is using local fallback replies.");
-  } else if (!groqApiKey) {
-    console.warn("GROQ_API_KEY is not set; chat is using local fallback replies.");
-  } else {
-    console.log(`AI chat enabled with Groq model: ${groqModel}`);
-  }
-});
+if (require.main === module) {
+  server.listen(PORT, process.env.HOST || "0.0.0.0", () => {
+    console.log(`Melvin Gadgets is running on http://localhost:${PORT}`);
+    if (aiDisabled) {
+      console.warn("AI is disabled; chat is using local fallback replies.");
+    } else if (!groqApiKey) {
+      console.warn("GROQ_API_KEY is not set; chat is using local fallback replies.");
+    } else {
+      console.log(`AI chat enabled with Groq model: ${groqModel}`);
+    }
+  });
+}
+
+module.exports = { handleChatRequest, applyCors };
