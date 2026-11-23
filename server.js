@@ -50,6 +50,20 @@ const sendJson = (response, statusCode, data) => {
   response.end(JSON.stringify(data));
 };
 
+// Allows the page to call this server when it is opened with VS Code "Go Live"
+// (any port on localhost or 127.0.0.1, e.g. 5500 or 5501).
+const LOCAL_ORIGIN_PATTERN = /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/;
+
+const applyCors = (request, response) => {
+  const origin = request.headers.origin;
+  if (origin && LOCAL_ORIGIN_PATTERN.test(origin)) {
+    response.setHeader("Access-Control-Allow-Origin", origin);
+    response.setHeader("Vary", "Origin");
+    response.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    response.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  }
+};
+
 const readJsonBody = async (request) => {
   const chunks = [];
   let byteLength = 0;
@@ -641,8 +655,14 @@ const server = http.createServer((request, response) => {
   }
 
   if (pathname === "/api/chat") {
+    applyCors(request, response);
+
+    if (request.method === "OPTIONS") {
+      response.writeHead(204).end(); // answers the browser's preflight check
+      return;
+    }
     if (request.method !== "POST") {
-      response.writeHead(405, { "Allow": "POST" }).end("Method not allowed");
+      response.writeHead(405, { "Allow": "POST, OPTIONS" }).end("Method not allowed");
       return;
     }
     handleChatRequest(request, response);
